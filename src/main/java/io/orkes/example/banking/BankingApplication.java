@@ -2,7 +2,9 @@ package io.orkes.example.banking;
 
 import io.orkes.conductor.client.ApiClient;
 import io.orkes.conductor.client.TaskClient;
+import io.orkes.conductor.client.WorkflowClient;
 import io.orkes.conductor.client.http.OrkesTaskClient;
+import io.orkes.conductor.client.http.OrkesWorkflowClient;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -30,6 +32,11 @@ public class BankingApplication {
 	@Bean
 	public TaskClient getTaskClient(ApiClient apiClient) {
 		return new OrkesTaskClient(apiClient);
+	}
+
+	@Bean
+	public WorkflowClient getWorkflowClient(ApiClient apiClient) {
+		return new OrkesWorkflowClient(apiClient);
 	}
 
 }
