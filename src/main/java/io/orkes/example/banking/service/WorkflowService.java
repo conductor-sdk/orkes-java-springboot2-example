@@ -19,6 +19,7 @@ public class WorkflowService {
 
     public Map<String, Object> startDepositWorkflow(DepositDetail depositDetail) {
         // docs-marker-start-1
+
         StartWorkflowRequest request = new StartWorkflowRequest();
         request.setName("deposit_payment");
         Map<String, Object> inputData = new HashMap<>();
@@ -28,6 +29,7 @@ public class WorkflowService {
 
         String workflowId = workflowClient.startWorkflow(request);
         log.info("Workflow id: {}", workflowId);
+
         // docs-marker-end-1
         return Map.of("workflowId", workflowId);
     }
