@@ -28,10 +28,13 @@ public class BankingApiController {
     }
 
 
+    // docs-marker-start-1
     @PostMapping(value = "/triggerDepositFlow", produces = "application/json")
     public ResponseEntity<Map<String, Object>> triggerDepositFlow(@RequestBody DepositDetail depositDetail) {
         log.info("Starting deposit flow for: {}", depositDetail);
         return ResponseEntity.ok(workflowService.startDepositWorkflow(depositDetail));
     }
+
+    // docs-marker-end-1
 
 }
