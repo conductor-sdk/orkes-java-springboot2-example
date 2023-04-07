@@ -15,7 +15,7 @@ public class ConductorWorkers {
 
     // docs-marker-start-1
 
-    /** Note: Using this setting, up to 5 tasks will run in parallel, with tasks being polled every 200ms */
+    // Note: Using this setting, up to 5 tasks will run in parallel, with tasks being polled every 200ms
     @WorkerTask(value = "fraud-check", threadCount = 5, pollingInterval = 200)
     public FraudCheckResult checkForFraudTask(DepositDetail depositDetail) {
         return fraudCheckService.checkForFraud(depositDetail);
