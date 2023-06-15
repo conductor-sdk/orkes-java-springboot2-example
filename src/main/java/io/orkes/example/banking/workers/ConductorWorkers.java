@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 @AllArgsConstructor
@@ -56,5 +55,10 @@ public class ConductorWorkers {
 
     // docs-marker-end-2
 
-
+    // docs-marker-start-3
+    @WorkerTask(value = "some_task_with_domain", domain = "test")
+    public String workerWithDomain() {
+        return "value to be returned at workflow task output";
+    }
+    // docs-marker-end-3
 }
