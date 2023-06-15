@@ -56,5 +56,10 @@ public class ConductorWorkers {
 
     // docs-marker-end-2
 
-
+    // docs-marker-start-3
+    @WorkerTask(value = "some_task_with_domain", domain = "test")
+    public String workerWithDomain() {
+        return "value to be returned at workflow task output";
+    }
+    // docs-marker-end-3
 }
